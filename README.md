@@ -1,96 +1,57 @@
-# 🚀 Flutter Agent Rules
+# 📊 Monitoring Agent Skill (Transversal)
 
-**Cerebro operativo centralizado para agentes de IA en proyectos Flutter**. Diseñado para maximizar el ahorro de tokens, mantener la memoria entre sesiones y modelos, garantizar la trazabilidad de código y mantener una arquitectura viva sincronizada.
+> **Habilidad Transversal de Observabilidad, Telemetría, Logs Estructurados y Monitoreo Agnóstico** para Agentes de Inteligencia Artificial (Antigravity, Cursor, Claude, OpenAI, Gemini).
 
-Se instala como submódulo de Git en `.agents/`. Las reglas globales son 100% agnósticas e independientes del código fuente del proyecto.
-
----
-
-## 📌 Pilares de Gobernanza
-
-1. **⚡ Modo Cavernícola & Token Saver**: Respuestas ultra-concisas, eliminación de prosa innecesaria y referencias de líneas en lugar de duplicación de código en chat.
-2. **🔄 Sincronización Automática de Rastreadores**: Actualización simultánea e integral de los 7 archivos de control en `overview/` (`session.md`, `work.md`, `tasks.md`, `pendientes.md`, `deuda_tecnica.md`, `work_review.md` y `architecture.md`) durante `$work` y `$close`, sin requerir recordatorio manual del usuario.
-3. **🗺️ Arquitectura Viva (`$archi`)**: Mantenimiento incremental del mapa técnico en `overview/architecture.md` mediante **diagramas sintéticos Mermaid** (`graph LR` / `graph TD`) sin texto redundante, para lectura rápida y rastreo de conexiones.
-4. **👥 Handoff y Memoria Versionada por Agente**: Firma canónica por proveedor/modelo (`[Proveedor] [Modelo] — YYYY-MM-DD`). Historial incremental de solución de bugs y traspaso transparente al cambiar de agente.
-5. **🛡️ Escudo Anti-parches (Filtro Agnóstico)**: Las mejoras al core prohiben código específico o comandos CLI rígidos; únicamente procesos de diagnóstico y gobernanza agnósticos.
-6. **🔒 Inviolabilidad de `.agents/`**: Los archivos de gobernanza en `.agents/` nunca se modifican desde el proyecto local. Todo aprendizaje candidato se plasma en `overview/learning.md` bajo `## 📌 Propuestas de mejora` y se promueve al repositorio oficial con aprobación del propietario.
+Designed to be **100% agnostic** across all application platforms (**Flutter, Web, Game, Backend**).
 
 ---
 
-## ⚡ $-Comandos (Orden de Flujo de Trabajo)
+## 📌 Propósito y Alcance
 
-Los $-comandos son atajos explícitos que ejecutan protocolos inmediatos en el proyecto:
+`monitoring-agent-skill` capacita a los agentes de IA para implementar, diagnosticar y optimizar la pila de observabilidad completa del sistema:
 
-| Comando | Tipo | Descripción y Flujo |
+1. **📈 4 Golden Signals (SRE)**: Rastreo y alertas basadas en Latencia, Tráfico, Errores y Saturación.
+2. **🪵 Logging Estructurado (JSON)**: Estándar unificado de logs estructurados con niveles (DEBUG, INFO, WARN, ERROR, FATAL) y Context Propagation (Correlation IDs / Trace IDs).
+3. **🔍 Telemetría y Tracing (OpenTelemetry)**: Trazabilidad distribuida entre apps cliente (Flutter, Web, Game) y microservicios backend.
+4. **🚨 Gestión de Alertas y Desbordamiento**: Reglas de alertas preventivas para Prometheus/Alertmanager, PagerDuty, Slack o Webhooks sin fatiga por alertas.
+5. **🐛 Rastreabilidad de Excepciones (Sentry/GlitchTip)**: Captura y agregación automática de crash reports en cliente y servidor con breadcrumbs contextuales.
+
+---
+
+## ⚡ $-Comandos de Observabilidad
+
+| Comando | Acción | Descripción |
 |---|---|---|
-| `$boot` | **Inicio** | Bootstrap completo, lectura de reglas, verificación de `overview/` y handoff de agente. |
-| `$status` | **Inspección** | Muestra el estado activo en 5 líneas (Agente, Nodo, Validación, Tareas abiertas y Próximo paso). |
-| `$work [descripción]` | **Ejecución** | Registra tarea/bug en `work.md`, abre `tasks.md` y sincroniza automáticamente los 7 rastreadores. |
-| `$archi` | **Arquitectura** | Escanea cambios estructurales de la sesión y actualiza **diagramas Mermaid sintéticos** (sin texto redundante) y capas en `architecture.md`. |
-| `$learn [texto]` | **Aprendizaje** | Valida con Filtro Agnóstico y registra propuesta de mejora candidata en `overview/learning.md`. |
-| `$learnagnostico [texto]` | **Abstracción** | Descontextualiza entidades de negocio a términos agnósticos y las registra en `overview/learning.md`. |
-| `$close` | **Cierre** | Cierre de sesión, validación de calidad/tests, registro de pendientes y sincronización final de rastreadores. |
-| `ejecuta .agents` | **Auditoría** | Dispara el bootstrap completo más la Evaluación de 3 Vías de `overview/learning.md`. |
+| `$monitoring` | **Bootstrap Monitoring** | Activa la habilidad y escanea la pila actual de observabilidad. |
+| `$monitoring:audit` | **Auditoría** | Inspecciona cobertura de logs, endpoints de métricas e integración de crash reporting. |
+| `$monitoring:logs` | **Esquema de Logs** | Genera o estandariza el formateador de logs estructurados JSON con Correlation ID. |
+| `$monitoring:metrics` | **Prometheus/OTel** | Configura recolectores de métricas y endpoints `/metrics` estandarizados. |
+| `$monitoring:sentry` | **Crash Reporting** | Configura Sentry / GlitchTip con filtrado de datos PII y captura de excepciones. |
+| `$monitoring:alerts` | **Alerting Rules** | Genera reglas de alerta preventivas en Prometheus o Grafana. |
 
 ---
 
-## 📂 Estructura Canónica de `overview/`
+## 🧩 Arquitectura de Observabilidad
 
-El estado del proyecto vive en la raíz del repositorio huésped dentro del directorio `overview/` (creado desde `.agents/templates/`):
-
-```
-overview/
-├── session.md             # Sesión activa, firma de Agente y puntos de reanudación
-├── work.md                # Índice maestro de tareas, bugs y backlog canónico único
-├── architecture.md        # Mapa de Arquitectura Viva (Diagramas Mermaid y capas)
-├── work_review.md         # Reporte de revisión mutable generado al final de $boot
-├── work/
-│   ├── tasks.md           # Tarea activa en ejecución, soluciones y rutas
-│   ├── pendientes.md      # Seguimiento de tareas identificadas al cerrar ($close)
-│   └── deuda_tecnica.md   # Deuda clasificada por prioridad (Alta, Media, Baja)
-├── trackers/
-│   ├── progress.md        # Progreso general por nodos de avance
-│   └── architecture.md    # Registro incremental de nodos de arquitectura
-├── context/               # Datos de dominio, changelogs y metadatos no mapeables
-├── workflows/             # Guías de dominio agnósticas (ej. Origen → Procesamiento → Destino)
-├── learning.md            # Propuestas de mejora candidatas al core
-└── history/               # Histórico de sesiones anteriores archivadas
+```mermaid
+graph TD
+    App[Aplicación: Flutter / Web / Backend / Game] -->|Logs JSON con TraceID| LogCollector[Vector / FluentBit / Loki]
+    App -->|Métricas OpenTelemetry / Prometheus| PromServer[Prometheus / Thanos]
+    App -->|Crash & Stacktrace| SentryServer[Sentry / GlitchTip]
+    LogCollector --> Grafana[Grafana Dashboards & Alertmanager]
+    PromServer --> Grafana
+    Grafana -->|Alertas en tiempo real| PagerDutySlack[Slack / PagerDuty / Email]
 ```
 
 ---
 
-## 📦 Instalación y Configuración
-
-### 1. Agregar submódulo en el proyecto Flutter
+## 📦 Instalación como Submódulo
 
 ```bash
-git submodule add https://github.com/xolotl-hub/flutter-agent-rules.git .agents
+git submodule add https://github.com/xolotl-hub/monitoring-agent-skill.git .agents/skills/monitoring
 ```
 
-### 2. Copiar adaptador según la herramienta de IA
-
-Copiar el adaptador correspondiente desde `.agents/adapters/` a la raíz de su entorno:
-
-- **OpenAI / Codex**: `adapters/AGENTS.md` → `AGENTS.md`
-- **Claude**: `adapters/CLAUDE.md` → `CLAUDE.md`
-- **Gemini / Antigravity**: `adapters/GEMINI.md` → `GEMINI.md`
-- **Cursor**: `adapters/cursor-rule.mdc` → `.cursor/rules/agents.mdc`
-
-### 3. Iniciar el proyecto
-
-Escribir en la primera interacción del agente:
-
+Para activar en la sesión actual:
 ```text
-$boot
+$monitoring
 ```
-
-El agente creará la estructura `overview/` desde `.agents/templates/` e iniciará el ciclo de trabajo.
-
----
-
-## 🔍 Contenido Contrastado y Verificación
-
-Cuando múltiples agentes participan en una tarea, los datos de dominio se verifican entre sí:
-- **`verificado`**: 2+ agentes coinciden, las fuentes son compatibles y no existen conflictos abiertos.
-- **`conflicto`**: Discrepancias abiertas entre fuentes o agentes; requiere resolución explícita.
-- **`no aplica`**: Proyectos o módulos sin suite de pruebas automatizadas.

@@ -1,4 +1,2 @@
-# Flutter Agent Rules adapter
-
-Read and follow `.agents/AGENTS.md` before responding or editing.
-Project state lives in `overview/`. Do not duplicate rules here.
+# GEMINI Adapter - Monitoring Skill
+When `$monitoring` is triggered, execute `.agents/skills/monitoring/AGENTS.md` and `.agents/skills/monitoring/SKILL.md`.

@@ -1,7 +1,5 @@
 ---
-description: Flutter Agent Rules bootstrap
-alwaysApply: true
+description: Transversal Monitoring Skill Rule for Cursor
+globs: ["*logger*", "*telemetry*", "sentry*", "prometheus*.yml"]
 ---
-
-Read and follow `.agents/AGENTS.md` before responding or editing.
-Project state lives in `overview/`. Do not duplicate rules here.
+Always enforce structured JSON logs and golden signals metrics defined in `.agents/skills/monitoring/SKILL.md`.
