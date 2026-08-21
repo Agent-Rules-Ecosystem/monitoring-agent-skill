@@ -1,2 +1,2 @@
 # Claude Adapter - Monitoring Skill
-Refer to `.agents/skills/monitoring/AGENTS.md` and `.agents/skills/monitoring/SKILL.md` for observability rules.
+Refer to `.skill/monitoring-agent-skill/AGENTS.md` and `.skill/monitoring-agent-skill/SKILL.md` for observability rules.

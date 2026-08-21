@@ -48,7 +48,7 @@ graph TD
 ## 📦 Instalación como Submódulo
 
 ```bash
-git submodule add https://github.com/xolotl-hub/monitoring-agent-skill.git .agents/skills/monitoring
+git submodule add https://github.com/xolotl-hub/monitoring-agent-skill.git .skill/monitoring-agent-skill
 ```
 
 Para activar en la sesión actual:

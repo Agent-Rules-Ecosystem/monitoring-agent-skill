@@ -9,10 +9,10 @@ description: Transversal Observability, Telemetry, Structured Logging, and Alert
 
 Al detectar `$monitoring` o tareas relacionadas con logs, métricas, Sentry, OpenTelemetry, Grafana, Prometheus o alertas, cargar:
 
-1. `.agents/skills/monitoring/SKILL.md` ← **Directiva principal**
-2. `.agents/skills/monitoring/core/commands.md`
-3. `.agents/skills/monitoring/core/brain.md`
-4. `.agents/skills/monitoring/core/path_map.md`
+1. `.skill/monitoring-agent-skill/SKILL.md` ← **Directiva principal**
+2. `.skill/monitoring-agent-skill/core/commands.md`
+3. `.skill/monitoring-agent-skill/core/brain.md`
+4. `.skill/monitoring-agent-skill/core/path_map.md`
 
 ## Reglas Canónicas de Observabilidad Agnóstica
 

@@ -2,4 +2,4 @@
 description: Transversal Monitoring Skill Rule for Cursor
 globs: ["*logger*", "*telemetry*", "sentry*", "prometheus*.yml"]
 ---
-Always enforce structured JSON logs and golden signals metrics defined in `.agents/skills/monitoring/SKILL.md`.
+Always enforce structured JSON logs and golden signals metrics defined in `.skill/monitoring-agent-skill/SKILL.md`.

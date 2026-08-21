@@ -1,2 +1,2 @@
 # OpenAI Adapter - Monitoring Skill
-Import `.agents/skills/monitoring/AGENTS.md` for monitoring tasks.
+Import `.skill/monitoring-agent-skill/AGENTS.md` for monitoring tasks.
