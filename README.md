@@ -45,9 +45,15 @@ graph TD
 
 ---
 
-## 📦 Instalación como Submódulo
+## 📦 Instalación como Submódulo Git
+
+> ⚠️ **Regla de Ubicación Obligatoria**: Las skills se instalan **únicamente** dentro del directorio `.skill/` en la raíz del proyecto huésped (a la misma altura que `.agents/`). **NUNCA** se deben colocar dentro de `.agents/`, la cual está reservada exclusivamente para el repositorio oficial de gobernanza (`*-agent-rules`).
 
 ```bash
+# 1. Crear el directorio contenedor .skill/ en la raíz del proyecto (si no existe)
+mkdir -p .skill
+
+# 2. Agregar la skill como submódulo Git (usando el nombre completo del repositorio)
 git submodule add https://github.com/xolotl-hub/monitoring-agent-skill.git .skill/monitoring-agent-skill
 ```
 
