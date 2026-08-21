@@ -1,3 +1,6 @@
+# 🚨 Reglas de Alertas Prometheus
+
+```yaml
 groups:
   - name: service_alerts
     rules:
@@ -8,3 +11,4 @@ groups:
           severity: critical
         annotations:
           summary: "Tasa de error HTTP 5xx superior al 5%"
+```

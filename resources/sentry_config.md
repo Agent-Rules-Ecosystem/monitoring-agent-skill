@@ -1,3 +1,6 @@
+# 🐛 Configuración de Sentry / GlitchTip
+
+```json
 {
   "dsn": "https://examplePublicKey@o0.ingest.sentry.io/0",
   "environment": "production",
@@ -6,3 +9,4 @@
   "attach_stacktrace": true,
   "send_default_pii": false
 }
+```

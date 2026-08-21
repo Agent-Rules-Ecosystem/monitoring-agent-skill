@@ -1,3 +1,8 @@
+# 🔍 Script de Auditoría de Logs JSON
+
+> **Verificación**: Validación de formato de logs estructurados en Python.
+
+```python
 #!/usr/bin/env python3
 import sys
 import json
@@ -18,3 +23,4 @@ if __name__ == "__main__":
     sample_log = '{"timestamp": "2026-08-21T06:00:00Z", "level": "INFO", "message": "Health check ok"}'
     valid, msg = check_json_log(sample_log)
     print(f"Sample log status: {valid} ({msg})")
+```
