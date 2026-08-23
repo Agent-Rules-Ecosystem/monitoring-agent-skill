@@ -57,3 +57,30 @@ graph LR
 | **P2 - HIGH** | Latencia p95 > 2000ms durante 10 min | < 30 minutos | Canal Slack `#alerts-urgent` |
 | **P3 - MEDIUM** | Uso de Disco > 85% o Memoria > 80% | < 4 horas | Ticket JIRA / Slack `#alerts-warning` |
 | **P4 - LOW** | Deprecación de API o Warning de SDK | Próximo Sprint | Email Digest semanal |
+
+
+---
+
+## 📝 Persistencia y Salida Activa (`overview/work/skill/`)
+
+Al ejecutar esta skill (mediante `$monitoring` o `$monitoring:audit`), es **obligatorio crear o actualizar su reporte activo** dentro del proyecto cliente en la ruta:
+
+`overview/work/skill/monitoring.md`
+
+### Estructura Requerida del Reporte:
+
+```markdown
+# 📋 Registro Activo de Tareas — Monitoring Agent Skill
+
+> **Generado por**: `monitoring-agent-skill` (`$monitoring:audit`)  
+> **Última actualización**: YYYY-MM-DD  
+
+## 🎯 Tareas Pendientes Accionables
+
+| ID | Tipo | Estado | Resumen | Evidencia/Ruta | Acción Requerida |
+|---|---|---|---|---|---|
+| MON-01 | Fix / Refactor | Pendiente | <Resumen breve> | `<ruta:línea>` | <Remediación recomendada> |
+
+## 📝 Observaciones y Detalles de Revisión
+- Detalle técnico, evidencia o contexto extendido proporcionado por la revisión de la skill.
+```
