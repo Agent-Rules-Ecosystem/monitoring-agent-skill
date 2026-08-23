@@ -54,7 +54,7 @@ graph TD
 mkdir -p .skill
 
 # 2. Agregar la skill como submódulo Git (usando el nombre completo del repositorio)
-git submodule add https://github.com/xolotl-hub/monitoring-agent-skill.git .skill/monitoring-agent-skill
+git submodule add https://github.com/Agent-Rules-Ecosystem/monitoring-agent-skill.git .skill/monitoring-agent-skill
 ```
 
 Para activar en la sesión actual:
